@@ -1,535 +1,430 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Welcome to the portfolio of Imtiyaj Ahamad, a skilled MERN stack developer passionate about crafting innovative web solutions. Explore my projects and expertise in web development."
-    />
-    <meta
-      name="keywords"
-      content="Imtiyaj Ahamad, MERN stack developer, portfolio, web development, projects, JavaScript, React, Node.js, MongoDB, Express.js, HTML, CSS"
-    />
-    <meta name="author" content="Imtiyaj Ahamad" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Imtiyaj Ahamad | Full Stack Software Developer</title>
 
-    <!-- meta tags ends here -->
-    <!-- google fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Ubuntu:ital,
-    wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
+  <style>
+    :root {
+      --primary: #2563eb;
+      --secondary: #0f172a;
+      --accent: #22c55e;
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --text-dark: #0f172a;
+      --text-light: #475569;
+      --border: #e2e8f0;
+      --code-bg: #020617;
+    }
 
-    <!-- font awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-    <link rel="stylesheet" href="style.css" />
-    <title>Portfolio: Imtiyaj Ahamad</title>
-  </head>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Ubuntu, sans-serif;
+      background: var(--bg);
+      color: var(--text-dark);
+      line-height: 1.7;
+    }
 
-  <body>
-    <!-- header section starts from here -->
+    .container {
+      max-width: 1150px;
+      margin: 0 auto;
+      padding: 40px 20px 80px;
+    }
+
+    /* ================= HEADER ================= */
+
+    header {
+      background: linear-gradient(135deg, #020617, #0f172a);
+      color: #ffffff;
+      padding: 70px 50px;
+      border-radius: 20px;
+      margin-bottom: 60px;
+    }
+
+    header h1 {
+      font-size: 3.2rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .role {
+      font-size: 1.3rem;
+      color: #93c5fd;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .intro {
+      max-width: 780px;
+      font-size: 1.05rem;
+      color: #e5e7eb;
+      margin-bottom: 30px;
+    }
+
+    .tech-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+
+    .badge {
+      background: rgba(37, 99, 235, 0.15);
+      border: 1px solid var(--primary);
+      color: #ffffff;
+      padding: 6px 14px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .links a {
+      text-decoration: none;
+      color: #ffffff;
+      border: 1px solid #475569;
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: all 0.25s ease;
+    }
+
+    .links a:hover {
+      background: var(--primary);
+      border-color: var(--primary);
+    }
+
+    /* ================= SECTION ================= */
+
+    section {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 45px;
+      margin-bottom: 45px;
+    }
+
+    h2 {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 30px;
+      border-left: 6px solid var(--primary);
+      padding-left: 15px;
+    }
+
+    /* ================= SUMMARY ================= */
+
+    .summary {
+      font-size: 1.05rem;
+      color: var(--text-light);
+    }
+
+    .summary strong {
+      color: var(--text-dark);
+      font-weight: 700;
+    }
+
+    /* ================= SKILLS ================= */
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+    }
+
+    .skill-box h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag {
+      border: 1px solid var(--border);
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      background: #f1f5f9;
+    }
+
+    /* ================= EXPERIENCE ================= */
+
+    .job {
+      margin-bottom: 40px;
+      padding-left: 25px;
+      border-left: 3px solid var(--border);
+    }
+
+    .job h3 {
+      font-size: 1.4rem;
+      font-weight: 800;
+      margin-bottom: 5px;
+    }
+
+    .job .company {
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .job .meta {
+      font-size: 0.9rem;
+      color: var(--text-light);
+      margin-bottom: 15px;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    li {
+      margin-bottom: 14px;
+      padding-left: 22px;
+      position: relative;
+      color: var(--text-light);
+    }
+
+    li::before {
+      content: "›";
+      position: absolute;
+      left: 0;
+      color: var(--primary);
+      font-weight: 900;
+    }
+
+    .highlight {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    /* ================= PROJECTS ================= */
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+      gap: 30px;
+    }
+
+    .project {
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 30px;
+      background: #f8fafc;
+    }
+
+    .project h3 {
+      font-size: 1.3rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .project p {
+      color: var(--text-light);
+      margin-bottom: 15px;
+    }
+
+    /* ================= EDUCATION ================= */
+
+    .education h3 {
+      font-size: 1.4rem;
+      font-weight: 800;
+    }
+
+    .cgpa {
+      margin-top: 10px;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    /* ================= FOOTER ================= */
+
+    footer {
+      text-align: center;
+      margin-top: 50px;
+      color: var(--text-light);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 640px) {
+      header h1 {
+        font-size: 2.4rem;
+      }
+      section {
+        padding: 30px 25px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
 
     <header>
-      <nav class="container">
-        <div class="logo">
-          <a href="#"><span>Imtiyaj</span>.io</a>
-        </div>
-        <div class="toggle-container">
-          <input type="checkbox" id="darkModeToggle" class="toggle" />
-          <label for="darkModeToggle" class="switch"></label>
-          <span class="toggle-label">Dark Mode</span>
-        </div>
-        <ul class="nav-links">
-          <li><a href="#">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#certificate">Certificate</a></li>
-          <li><a href="#service">Services</a></li>
-          <li><a href="#project">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
+      <h1>Imtiyaj Ahamad</h1>
+      <div class="role">Full Stack Software Developer</div>
+
+      <p class="intro">
+        Full Stack Developer with nearly 2 years of experience building and optimizing
+        scalable, data-driven web applications. Strong focus on backend architecture,
+        database performance, and dashboard-heavy systems.
+      </p>
+
+      <div class="tech-badges">
+        <span class="badge">React</span>
+        <span class="badge">Next.js</span>
+        <span class="badge">Node.js</span>
+        <span class="badge">LoopBack 4</span>
+        <span class="badge">MySQL</span>
+        <span class="badge">MongoDB</span>
+        <span class="badge">TypeScript</span>
+      </div>
+
+      <div class="links">
+        <a href="mailto:imbanty07@gmail.com">Email</a>
+        <a href="https://linkedin.com/in/imtiyaj-ahamad-7bb310203">LinkedIn</a>
+        <a href="https://github.com/imtiyaj-ahamad">GitHub</a>
+        <a href="tel:+916392035767">Call</a>
+      </div>
     </header>
 
-    
-
-    <!-- intro  -->
-    <section class="home">
-      <div class="Introtext">
-        <p>Hey there! I'm</p>
-        <h1>Imtiyaj Ahamad</h1>
-        <p>
-          I'm a software engineer, bridging the gap from pixels to databases to
-          turn your digital dreams into reality.
-        </p>
-
-        <div class="icon">
-          <a
-            href="https://www.linkedin.com/in/imtiyaj-ahamad-7bb310203/"
-            target="_blank"
-            rel="noopener"
-            ><i class="fa-brands fa-linkedin"></i
-          ></a>
-          <a
-            href="https://www.facebook.com/imtiyaj.ahamad.716"
-            target="_blank"
-            rel="noopener"
-            ><i class="fa-brands fa-facebook"></i
-          ></a>
-          <a
-            href="https://www.instagram.com/imtiyaj_ahamad/?hl=en"
-            target="_blank"
-            rel="noopener"
-            ><i class="fa-brands fa-instagram"></i
-          ></a>
-          <a
-            href="https://github.com/ImtiyajAhamad7"
-            target="_blank"
-            rel="noopener"
-            ><i class="fa-brands fa-github"></i
-          ></a>
-        </div>
-
-        <a href="cv.pdf" download>
-          <button>Download CV</button>
-        </a>
-      </div>
-
-      <div class="image">
-        <img
-          id="homeimg"
-          src="./images/introimg.png"
-          alt="imtiyaj Ahamad Intro photo"
-        />
-      </div>
-    </section>
-    <hr />
-
-    <!-- about me -->
-
-    <section id="about">
-      <div class="aboutimage">
-        <img
-          src="./images/upload.png"
-          alt="imtiyaj Ahamad profile photo"
-          id="abtme"
-        />
-      </div>
-
-      <div class="content">
-        <h1>About me</h1>
-
-        <p>
-          Hey there! I'm <span>Imtiyaj Ahamad</span>, a software engineer and
-          passionate full stack developer. With a strong foundation in both
-          frontend and backend technologies, I thrive on creating seamless and
-          user-friendly experiences across the web. Whether it's crafting
-          elegant user interfaces or architecting robust backend systems, I'm
-          dedicated to delivering high-quality solutions that exceed
-          expectations. Let's build something amazing together...
-        </p>
-
-        <button>Read more...</button>
-      </div>
+    <section>
+      <h2>Professional Summary</h2>
+      <p class="summary">
+        <strong>Full Stack Software Developer</strong> experienced in building
+        high-performance dashboard applications using the MERN stack and relational
+        databases. Strong expertise in MySQL optimization, backend API design,
+        and scalable system architecture. Proven ability to improve application
+        performance through efficient queries, clean backend logic, and
+        optimized frontend rendering.
+      </p>
     </section>
 
-    <!-- Skills section -->
-
-    <hr />
-    <section id="skills">
-      <h1>My Skills</h1>
-
-      <div class="skill">
-        <div class="name">HTML</div>
-        <div class="progress-bar">
-          <div class="progress" style="width: 80%"></div>
-        </div>
-        <div class="html">80%</div>
-      </div>
-
-      <div class="skill">
-        <div class="name">CSS</div>
-        <div class="progress-bar">
-          <div class="progress" style="width: 80%"></div>
-        </div>
-        <span class="CSS">80%</span>
-      </div>
-
-      <div class="skill">
-        <div class="name">JavaScript</div>
-        <div class="progress-bar">
-          <div class="progress" style="width: 85%"></div>
-        </div>
-        <div class="JavaScript">85%</div>
-      </div>
-
-      <div class="skill">
-        <div class="name">Java</div>
-
-        <div class="progress-bar">
-          <div class="progress" style="width: 90%"></div>
-        </div>
-
-        <div class="Java">90%</div>
-      </div>
-
-      <div class="skill">
-        <div class="name">Communication</div>
-        <div class="progress-bar">
-          <div class="progress" style="width: 95%"></div>
-        </div>
-        <div class="communication">95%</div>
-      </div>
-    </section>
-
-    <hr />
-    <!-- services  section html-->
-
-    <section id="service">
-      <h1>Our Services</h1>
-      <div class="serviceCards">
-        <div class="web">
-          <i class="fa-solid fa-code"></i>
-          <h3>Web development</h3>
-          <p>
-            Welcome to our web development service, where we craft digital
-            experiences that captivate, engage, and inspire. From sleek and
-            intuitive user interfaces to robust and scalable backend systems, we
-            specialize in bringing your unique vision to life on the web.
-            Whether you're a startup looking to establish your online presence
-            or an established business seeking to enhance your digital
-            footprint, our team of expert developers is dedicated to delivering
-            tailor-made solutions that elevate your brand and drive results.
-            Let's collaborate to create a standout website that sets you apart
-            in the digital landscape
-          </p>
-
-          <button>Read more..</button>
-        </div>
-
-        <div class="design">
-          <i class="fa-solid fa-pen-nib"></i>
-          <h3>Web design</h3>
-          <p>
-            Welcome to our web design services, where creativity seamlessly
-            merges with functionality to enhance your online presence. Our
-            skilled team specializes in crafting visually stunning, user-centric
-            websites that resonate with your audience. From sleek, modern
-            layouts to captivating graphics and intuitive navigation, each
-            design reflects your brand's identity and values. Whether launching
-            a new site or refreshing an existing one, we're dedicated to
-            realizing your vision, providing a seamless, memorable online
-            experience. Let's collaborate on a website that not only impresses
-            but also engages, effortlessly achieving your business objectives.
-          </p>
-          <button>Read more..</button>
-        </div>
-
-        <div class="DataBase">
-          <i class="fa-solid fa-database"></i>
-          <h3>DataBase</h3>
-          <p>
-            Welcome to our database management services, where we specialize in
-            organizing, securing, and optimizing your data for peak performance.
-            With expertise in designing efficient database architectures,
-            implementing robust security measures, and enhancing query
-            performance, we ensure every aspect of your database is managed with
-            precision. Whether you're migrating to a new platform, improving
-            data accessibility, or enhancing data integrity, we streamline your
-            operations to empower data-driven decisions. Let's collaborate to
-            maximize your data's value and drive innovation within your
-            organization.
-          </p>
-
-          <button>Read more</button>
-        </div>
-      </div>
-    </section>
-
-    <!-- certificates section  -->
-    <hr />
-
-    <section id="certificate">
-      <h1>My Certificate</h1>
-
-      <div class="cards">
-        <div class="first">
-          <h3>Training Certificate: C and Data Structures</h3>
-          <p>
-            <span>Organization: Kashi Institute of Technology</span><br />
-            Duration: 100 hours <br />
-            Completed an intensive 100-hour training program on C programming
-            and Data Structures at Kashi Institute of Technology. Gained
-            expertise in C syntax, data types, control structures, and
-            functions. Explored various data structures including arrays, linked
-            lists, stacks, queues, trees, and graphs. Developed strong
-            problem-solving skills through practical exercises and real-world
-            applications.
-          </p>
-          <a
-            href="https://drive.google.com/file/d/11_80r8Djf488yZW6KuTFYVZDP5iB2nZw/view?usp=sharing"
-            rel="noopener"
-            target="_blank"
-            ><button>Certificate</button></a
-          >
-        </div>
-        <div class="second">
-          <h3>Internship Certificate: E & ICT Academy, IIT Kanpur</h3>
-          <p>
-            <span>Organization: E & ICT Academy, IIT Kanpur</span> <br />
-            Duration: 6 weeks <br />
-            Completed internship at E & ICT Academy, IIT Kanpur, from June to
-            July 2021. Demonstrated strong working skills and a proactive
-            attitude towards learning. Successfully completed projects on time,
-            exceeding expectations. Grateful for the valuable experience and
-            opportunity to work with esteemed faculty and researchers. Ready to
-            apply gained knowledge and skills to future endeavors.
-          </p>
-          <a
-            href="https://drive.google.com/file/d/1PnL16b_F1ooet5MlXl0uHKOsvXFd3qPc/view?usp=sharing"
-            rel="noopener"
-            target="_blank"
-          >
-            <button>Certificate</button></a
-          >
-        </div>
-        <div class="third">
-          <h3>Full Stack Development Project Certificate</h3>
-          <p>
-            <span>Organization: E & ICT Academy, IIT Kanpur</span> <br />
-            Duration: 6 weeks <br />
-            Completed project titled "Custom Project Covering All The Stacks"
-            during the Full Stack Developer course at Prutor.ai, IIT Kanpur.
-            Utilized HTML5, CSS3, JavaScript, Bootstrap, PHP, and MySQL.
-            Original work demonstrating proficiency in full stack development.
-            Not submitted elsewhere for academic credit. Grateful for the
-            opportunity provided by Prutor.ai, IIT Kanpur
-          </p>
-          <a
-            href="https://drive.google.com/file/d/1cOaG79r5MuPdQLGbw-vqd9KwDA1CGzvN/view?usp=sharing"
-            rel="noopener"
-            target="_blank"
-            ><button>Certificate</button></a
-          >
-        </div>
-      </div>
-    </section>
-
-    <hr />
-
-    <section id="project">
-      <h1>My Projects</h1>
-      <div class="projectcontainer">
-        <div class="project1" id="proj1">
-          <h3>TikTakToe Game</h3>
-          <p>
-            Developed a responsive Tic-Tac-Toe game using React, showcasing
-            proficiency in modern web development technologies. Enabled users to
-            make and visualize moves, with the ability to go back to any
-            previous move in the game, offering a unique and engaging feature.
-            Utilized React state management to efficiently track the game's
-            state and history, allowing for time-travel functionality.
-          </p>
-          <a
-            href="https://imtiyajticgame.surge.sh/"
-            rel="noopener"
-            target="_blank"
-            ><button type="button">Show</button></a
-          >
-        </div>
-
-        <!-- project2 -->
-        <div class="project1" id="proj2">
-          <h3>Square Race</h3>
-          <p>
-            Presenting 'Car Racer', a web-based game designed to test reflexes
-            and precision driving skills. Take the driver's seat and maneuver
-            your car through a bustling traffic environment, utilizing arrow
-            keys or touch controls to evade collisions and achieve the highest
-            score possible. This project showcases an engaging user experience,
-            responsive design for various devices, and a focus on user enjoyment
-            and skill improvement
-          </p>
-          <a
-            href="https://squarerace.w3spaces.com/"
-            target="_blank"
-            rel="noopener"
-            ><button type="button">Show</button></a
-          >
-        </div>
-
-        <!-- project 3 -->
-        <div class="project1" id="proj3">
-          <h3>E-learning - Web App</h3>
-          <p>
-            Developed an e-learning website using PHP, MySQL, and Bootstrap to
-            provide a platform for students to access and purchase courses
-            Integrated a secure payment gateway to facilitate course purchases
-            and transactions. Implemented user authentication and authorization
-            systems to ensure secure access to course materials. Designed and
-            implemented a robust admin panel with PHP and MySQL, providing
-            administrators with the ability to manage course content
-            effortlessly.
-          </p>
-          <a
-            href="https://github.com/ImtiyajAhamad/imtiyaj-learning.github.io"
-            target="_blank"
-            rel="noopener"
-            ><button type="button">Show</button></a
-          >
-        </div>
-
-        <!-- project 4 -->
-        <div class="project1" id="proj4">
-          <h3>Filmy Wizard</h3>
-          <p>
-            The movie blog project is a web application designed to showcase
-            various aspects of movies, including reviews, summaries, trailers,
-            and other related content. It provides an interactive platform for
-            movie enthusiasts to explore, discuss, and engage with diverse
-            cinematic experiences.
-          </p>
-          <a
-            href="https://imtiyajahamad7.github.io/Movie_blog/"
-            target="_blank"
-            rel="noopener"
-            ><button type="button">Show</button></a
-          >
-        </div>
-        <div class="project1" id="proj5">
-          <h3>Youtube Clone</h3>
-          <p>
-            Introducing my YouTube Clone: A sleek and immersive web application
-            meticulously crafted with HTML and CSS. Dive into a familiar yet
-            refreshing user experience reminiscent of the renowned video-sharing
-            platform. From the dynamic header featuring navigation and search
-            functionalities to the intuitive sidebar offering seamless access to
-            trending content, subscriptions, and more, every element is designed
-            with attention to detail. Experience the essence of YouTube in this
-            meticulously designed clone, where functionality meets aesthetic
-            appeal
-          </p>
-          <a
-            href="https://imtiyajahamad7.github.io/Youtube_clone_frontend/"
-            target="_blank"
-            rel="noopener"
-            ><button type="button">Show</button></a
-          >
-        </div>
-        <div class="project1" id="proj6">
-          <h3>Library Management</h3>
-          <p>
-            Presenting our Library Management System project, an efficient and
-            user-friendly solution developed using HTML, CSS, and PHP.
-            Seamlessly manage library resources, including books, journals, and
-            multimedia materials, with ease and precision. Our system offers
-            intuitive interfaces for librarians to add, update, and delete items
-            from the catalog, as well as for users to search, borrow, and return
-            materials. With features such as real-time availability status,
-            automated notifications, and robust authentication mechanisms, our
-            project streamlines library operations while enhancing the user
-            experience. Explore the future of library management with our
-            innovative solution.
-          </p>
-          <a
-            href="https://github.com/ImtiyajAhamad7/Library_Managment_System"
-            target="_blank"
-            rel="noopener"
-            ><button type="button">Show</button></a
-          >
-        </div>
-      </div>
-    </section>
-
-    <!-- form -->
-
-    <hr />
-
-    <section id="contact">
-      <h1>Contact Us</h1>
-      <form>
-        <div class="row">
-          <div class="form-group">
-            <label for="firstName">First Name:</label>
-            <input type="text" id="firstName" name="firstName" required />
-          </div>
-          <div class="form-group">
-            <label for="lastName">Last Name:</label>
-            <input type="text" id="lastName" name="lastName" required />
+    <section>
+      <h2>Technical Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-box">
+          <h3>Frontend</h3>
+          <div class="tags">
+            <span class="tag">React</span>
+            <span class="tag">Next.js</span>
+            <span class="tag">TypeScript</span>
+            <span class="tag">Redux</span>
+            <span class="tag">Tailwind</span>
           </div>
         </div>
-        <div class="row">
-          <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required />
-          </div>
-          <div class="form-group">
-            <label for="mobile">Contact Number:</label>
-            <input
-              type="tel"
-              id="mobile"
-              name="mobile"
-              pattern="[0-9]{10}"
-              required
-            />
+
+        <div class="skill-box">
+          <h3>Backend</h3>
+          <div class="tags">
+            <span class="tag">Node.js</span>
+            <span class="tag">Express</span>
+            <span class="tag">NestJS</span>
+            <span class="tag">LoopBack 4</span>
+            <span class="tag">REST APIs</span>
           </div>
         </div>
-        <div class="form-group">
-          <label for="query">Your Messege:</label>
-          <textarea id="query" name="query" rows="4" required></textarea>
+
+        <div class="skill-box">
+          <h3>Databases</h3>
+          <div class="tags">
+            <span class="tag">MySQL</span>
+            <span class="tag">MongoDB</span>
+            <span class="tag">Indexing</span>
+            <span class="tag">Query Optimization</span>
+          </div>
         </div>
-        <button type="submit">Send</button>
-      </form>
+
+        <div class="skill-box">
+          <h3>Tools & Practices</h3>
+          <div class="tags">
+            <span class="tag">Git</span>
+            <span class="tag">GitHub</span>
+            <span class="tag">Agile</span>
+            <span class="tag">Jira</span>
+            <span class="tag">Performance Tuning</span>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- footer -->
-    <hr />
+    <section>
+      <h2>Professional Experience</h2>
+
+      <div class="job">
+        <h3>Full Stack Software Developer</h3>
+        <div class="company">Riu.ai</div>
+        <div class="meta">Bengaluru · Nov 2025 – Present</div>
+        <ul>
+          <li>Optimized dashboard synchronization and data pipelines, achieving <span class="highlight">40% faster graph rendering</span>.</li>
+          <li>Handled complex, time-based aggregations for large datasets.</li>
+          <li>Designed scalable REST APIs using Node.js and LoopBack 4.</li>
+          <li>Improved MySQL schemas, indexing, and query execution plans.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <h3>Senior Software Developer</h3>
+        <div class="company">Originator Infomatics</div>
+        <div class="meta">Varanasi · Mar 2024 – Nov 2025</div>
+        <ul>
+          <li>Promoted from Trainee to Senior Developer within 12 months.</li>
+          <li>Reduced production bugs by <span class="highlight">60%</span> through better code quality and testing.</li>
+          <li>Delivered over <span class="highlight">95%</span> of projects on time in Agile environments.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Projects</h2>
+      <div class="projects">
+        <div class="project">
+          <h3>BivocalBirds</h3>
+          <p>Property renting and management platform with heavy reporting dashboards.</p>
+          <ul>
+            <li>Optimized dashboard performance and source-wise lead graphs.</li>
+            <li>Improved backend data aggregation and reporting accuracy.</li>
+          </ul>
+        </div>
+
+        <div class="project">
+          <h3>HR Lense</h3>
+          <p>Internal HR management system built for performance and usability.</p>
+          <ul>
+            <li>Built responsive dashboards using React and TypeScript.</li>
+            <li>Improved frontend rendering and UX consistency.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="education">
+      <h2>Education</h2>
+      <h3>B.Tech in Computer Science</h3>
+      <p>Kashi Institute of Technology, Varanasi</p>
+      <div class="cgpa">CGPA: 7.5 / 10</div>
+    </section>
 
     <footer>
-      <ul class="social-links">
-        <a href="tel:+916392035767" target="_blank" rel="noopener"
-          ><i class="fa-solid fa-phone"></i
-        ></a>
-        <a href="mailto:imbanty07@gmail.com" target="_blank" rel="noopener"
-          ><i class="fa-solid fa-envelope"></i
-        ></a>
-        <a
-          href="https://www.linkedin.com/in/imtiyaj-ahamad-7bb310203/"
-          target="_blank"
-          rel="noopener"
-          ><i class="fa-brands fa-linkedin"></i
-        ></a>
-        <a
-          href="https://www.facebook.com/imtiyaj.ahamad.716"
-          target="_blank"
-          rel="noopener"
-          ><i class="fa-brands fa-facebook"></i
-        ></a>
-        <a
-          href="https://www.instagram.com/imtiyaj_ahamad/?hl=en"
-          target="_blank"
-          rel="noopener"
-          ><i class="fa-brands fa-instagram"></i
-        ></a>
-        <a
-          href="https://github.com/ImtiyajAhamad7"
-          target="_blank"
-          rel="noopener"
-          ><i class="fa-brands fa-github"></i
-        ></a>
-      </ul>
-
-      <p>Copyright:2024 @Imtiyaj Ahamad</p>
+      © 2026 Imtiyaj Ahamad · Full Stack Software Developer
     </footer>
-  </body>
+
+  </div>
+</body>
 </html>
